@@ -9,11 +9,15 @@ class Option extends Model
 {
     use HasFactory;
 
-    public function poll(){
+    protected $fillable = ['name'];
+
+    public function poll()
+    {
         return $this->belongsTo(Poll::class);
     }
 
-    public function Votes(){
+    public function Votes()
+    {
         return $this->hasMany(Vote::class);
     }
 }

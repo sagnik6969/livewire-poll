@@ -1,6 +1,6 @@
 <div>
     {{-- Success is as dangerous as failure. --}}
-    <form action="">
+    <form wire:submit.prevent="createPoll">
         <div class="form-group">
             <label for="">Poll Title</label>
             <input wire:model="title" class="form-control" type="text" name="" id="">
@@ -22,6 +22,7 @@
                     </div>
                 </div>
             </div>
+            <button class="btn btn-primary">Create Poll</button>
         @endforeach
     </form>
 </div>

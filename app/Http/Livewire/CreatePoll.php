@@ -2,12 +2,13 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Poll;
 use Livewire\Component;
 
 class CreatePoll extends Component
 {
     public $title;
-    public array $options = ['Good'];
+    public array $options = [];
     public function render()
     {
         return view('livewire.create-poll');
@@ -24,6 +25,24 @@ class CreatePoll extends Component
         // to erase the value of a particular index
         $this->options = array_values($this->options);
         // to resetting the indexes.
+    }
+
+    public function createPoll()
+    {
+        $poll = Poll::create([
+            'name' => $this->title
+        ]);
+
+        foreach ($this->options as $option) {
+
+            $poll->options()->create([
+                'name' => $option
+            ]);
+        }
+
+        $this->reset(['title', 'options']);
+        // for resting the form after the input is submitted
+        
     }
 
     // public function mount(){
