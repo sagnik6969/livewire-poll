@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('app');
 });
+
+
+// livewire
+// for dynamically updating the web page without full reload
+// contrary to other front end frameworks. livewire logic is run on the backend
+// if anything in the frontend changes livewire makes a request to the backend server
+// after getting back the response livewire make changes to the frontend automatically.

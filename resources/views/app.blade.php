@@ -33,7 +33,7 @@
 <body class="container mx-auto mt-10 mb-10 max-w-lg">
     @livewireScripts
     {{-- Need to add this to livewire to work --}}
-    <h1>Sagnik</h1>
+    @livewire('create-poll')
 </body>
 
 </html>
