@@ -67,6 +67,8 @@ class CreatePoll extends Component
         $this->reset(['title', 'options']);
         // for resting the form after the input is submitted
 
+        $this->emit('pollCreated');
+
     }
 
     // public function mount(){
