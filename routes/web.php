@@ -23,3 +23,7 @@ Route::get('/', function () {
 // contrary to other front end frameworks. livewire logic is run on the backend
 // if anything in the frontend changes livewire makes a request to the backend server
 // after getting back the response livewire make changes to the frontend automatically.
+
+// livewire actions
+// just like vue methods.
+ 

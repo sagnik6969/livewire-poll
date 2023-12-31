@@ -5,35 +5,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel Livewire Poll</title>
-
-    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
-
-    {{-- blade-formatter-disable --}}
-  <style type="text/tailwindcss">
-    .btn {
-      @apply rounded-md px-2 py-1 text-center font-medium text-slate-700 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50
-    }
-    label {
-      @apply block uppercase text-slate-700 mb-2
-    }
-    input, 
-    textarea {
-      @apply shadow-sm appearance-none border w-full py-2 px-3 text-slate-700 leading-tight focus:outline-none
-    }
-    .error {
-      @apply text-red-500 text-sm
-    }
-  </style>
-  {{-- blade-formatter-enable --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
     @livewireStyles
     {{-- Need to add this for livewire to work --}}
+
+    <style>
+        .container {
+            max-width: 700px;
+        }
+    </style>
 </head>
 
-<body class="container mx-auto mt-10 mb-10 max-w-lg">
-    @livewireScripts
-    {{-- Need to add this to livewire to work --}}
-    @livewire('create-poll')
+<body>
+    <div class="container mt-5">
+        @livewireScripts
+        {{-- Need to add this to livewire to work --}}
+        @livewire('create-poll')
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

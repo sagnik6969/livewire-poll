@@ -13,6 +13,6 @@ class Vote extends Model
     {
         return $this->belongsTo(Option::class);
         // if the class is in the same folder / same namespace we don't need to import it 
-    
+
     }
 }
