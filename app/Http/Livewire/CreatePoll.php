@@ -9,6 +9,19 @@ class CreatePoll extends Component
 {
     public $title;
     public array $options = [];
+
+    protected $rules = [
+        'title' => 'required|min:6',
+        'options' => 'required|min:1|array',
+        'options.*' => 'required'
+        // For validating individual elements
+    ];
+
+    protected $messages = [
+        'options.*' => 'The option cant be empty',
+        // for custom error messages
+    ];
+
     public function render()
     {
         return view('livewire.create-poll');
@@ -16,19 +29,27 @@ class CreatePoll extends Component
 
     public function addOption()
     {
-        $this->options[] = fake()->word();
+        $this->options[] = "";
         // / $this->info('fuck');
     }
     public function removeOption($index)
     {
+
         unset($this->options[$index]);
         // to erase the value of a particular index
         $this->options = array_values($this->options);
         // to resetting the indexes.
     }
 
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+        // for live validation as we type in the input field
+    }
+
     public function createPoll()
     {
+        $this->validate();
         $poll = Poll::create([
             'name' => $this->title
         ])->options()->createMany(
