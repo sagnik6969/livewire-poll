@@ -22,7 +22,14 @@
     <div class="container mt-5">
         @livewireScripts
         {{-- Need to add this to livewire to work --}}
-        @livewire('create-poll')
+        <div>
+            <h2>Create Poll</h2>
+            @livewire('create-poll')
+        </div>
+        <div class="mt-4">
+            <h2>Available Polls</h2>
+            @livewire('polls')
+        </div>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
